@@ -1,0 +1,47 @@
+<div style="display: flex; flex-direction: column; width: 100%;">    
+    <h3 style="margin: 1rem 2rem;"> {{ title }} </h3>
+
+
+    <section class="grupo-visados">
+    <h3>Visados pendientes de carga</h3>
+    @for (v of visadosPendientes; track v.numero) {
+        <div class="card-visado pendiente" [style.background-color]="v.color">
+            <div class="info-principal">
+                <div class="numero">{{ v.numero }}</div>
+                <div class="estado">{{ v.fase }}</div>
+            </div>
+            <div class="info-secundaria">
+                <div>Partida: {{ v.partida }}</div>
+                <div class="descripcion">{{ v.descripcion }}</div>
+            </div>
+            <div class="info-secundaria">
+                <div>Iniciado: {{ v.inicio | date:'dd/MM/yyyy' }}</div>
+                <p></p>
+            </div>
+            <button class="boton-accion">{{ v.accion }}</button>
+        </div>
+    }
+    </section>
+
+    <section class="grupo-visados">
+    <h3>Visados presentados</h3>
+    @for (v of visadosPresentados; track v.numero) {
+        <div class="card-visado presentado" [style.background-color]="v.color">
+            <div class="info-principal">
+                <div class="numero">{{ v.numero }}</div>
+                <div class="estado">{{ v.fase }}</div>
+            </div>
+            <div class="info-secundaria">
+                <div>Partida: {{ v.partida }}</div>
+                <div class="descripcion">{{ v.descripcion }}</div>
+            </div>
+            <div class="info-secundaria">
+                <div>Iniciado: {{ v.inicio  | date:'dd/MM/yyyy' }}</div>
+                <p></p>
+            </div>
+            <button class="boton-accion">{{ v.accion }}</button>
+        </div>
+    }
+    </section>
+
+</div>
