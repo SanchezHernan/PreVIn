@@ -1,15 +1,15 @@
 import { Component, Input } from '@angular/core';
-import { MatCardModule }   from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
+import { CommonModule }     from '@angular/common';       // pipes date, etc.
+import { MatButtonModule }  from '@angular/material/button';
 
 @Component({
   selector: 'app-visado-card',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule],
+  imports: [CommonModule, MatButtonModule],
   templateUrl: './visado-card.component.html',
   styleUrls: ['./visado-card.component.scss']
 })
 export class VisadoCardComponent {
-  // aceptamos cualquier objeto, sin interfaz explícita
+  /** Objeto visado (cualquier shape por ahora). */
   @Input() visado!: any;
 }
