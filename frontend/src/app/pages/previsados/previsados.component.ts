@@ -14,7 +14,7 @@ import { MatSelectModule }  from '@angular/material/select';
 import { MatButtonModule }  from '@angular/material/button';
 import { MatIconModule }    from '@angular/material/icon';
 import { MatCardModule }    from '@angular/material/card';
-
+import { CircIconComponent } from '../../components/circ-icon/circ-icon.component';
 
 @Component({
   selector: 'app-previsados',
@@ -33,6 +33,7 @@ import { MatCardModule }    from '@angular/material/card';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    CircIconComponent
   ],
 })
 export class PrevisadosComponent {

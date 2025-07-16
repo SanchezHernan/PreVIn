@@ -1,16 +1,23 @@
 .catastral-wrapper {
-  background: #f7d5bd;   // color salmón claro
+  background: var(--color-salmon);   // color salmón claro
   padding: 2rem;
 }
 
 .header {
   text-align: center;
-  &__icon { font-size: 5rem; }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
   &__title { line-height: 1; margin: .25rem 0; font-weight: 700; }
-  &__subtitle { margin-top: .5rem; }
+  &__subtitle { margin-top: 1rem; }
 }
 
-.section-label { font-weight: 600; }
+.section-label { 
+  font-weight: 600; 
+  padding-top: 10px;
+}
 .card-title   { font-size: 1rem; font-weight: 700; }
 
 .row-flex { display: flex; flex-wrap: wrap; gap: 1rem; }
@@ -27,3 +34,18 @@
   font-size: .75rem;
   height: calc(1.5em + .75rem + 2px);
 }
+
+
+.w120 { width: 120px; }
+.w159 { width: 159px; }
+.w257 { width: 257px; }
+.w75p { width: 75%; }
+
+.textAlignEnd {
+  text-align: end;
+}
+
+.mr5{
+  margin-right: 5px;
+}
+
