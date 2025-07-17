@@ -3,6 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { MisVisadosComponent } from './pages/misvisados/misvisados.component';
 import { PrevisadosComponent } from './pages/previsados/previsados.component';
 import { DocyplanosComponent } from './pages/docyplanos/docyplanos.component';
+import { VisadosPresentadosComponent } from './pages/visados-presentados/visados-presentados.component';
 
 export const routes: Routes = [
     {
@@ -24,5 +25,10 @@ export const routes: Routes = [
         path: 'docyplanos',
         component: DocyplanosComponent,
         title: 'Documentos y Planos'
+    },
+    {
+        path: 'visados-presentados',
+        component: VisadosPresentadosComponent,
+        title: 'Visados Presentados'
     }
 ];
