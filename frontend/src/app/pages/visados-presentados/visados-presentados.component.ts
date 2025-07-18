@@ -2,17 +2,34 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDividerModule } from '@angular/material/divider';
 import { VisadoCardComponent } from '../../components/visado-card/visado-card.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSelectComponent } from '../../components/mat-select/mat-select.component';
 
+interface Partida {
+  id: number;
+  value: string;
+}
 @Component({
   selector: 'app-visados-presentados',
   standalone: true,
-  imports: [VisadoCardComponent, MatDividerModule, CommonModule],
+  imports: [VisadoCardComponent, MatDividerModule, CommonModule, MatSelectModule, MatSelectComponent],
   templateUrl: './visados-presentados.component.html',
   styleUrl: './visados-presentados.component.scss'
 })
 export class VisadosPresentadosComponent {
 
   title = 'Visados Presentados'
+
+  p1: Partida[] = [
+    {id: 0, value: 'Profesional'},
+    {id: 1, value: 'Cod. Visado'}
+  ];
+
+  p2: Partida[] = [
+    {id: 2, value: 'Profesional'},
+    {id: 3, value: 'Cod. Visado'},
+    {id: 4, value: 'Expediente'}
+  ];
 
   visadosEnEvaluacion = [
     {

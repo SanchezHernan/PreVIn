@@ -1,7 +1,13 @@
-<div style="display: flex; flex-direction: column; width: 100%;">    
+<div style="display: flex; flex-direction: column; width: 100%; margin: 2rem;">    
     <h3 class="titulo"> {{ title }} </h3>
 
-    select
+    <div>
+        <app-mat-select
+            placeholder = 'Partida'
+            [elements] = p1
+        />
+        <input type="text"> //meter mat input
+    </div>
 
     <section class="grupo-visados">
         <h3>Visados pendientes de carga</h3>
@@ -10,7 +16,11 @@
         }
     </section>
 
-    select
+    <app-mat-select
+        placeholder = 'Partida'
+        [elements] = p2
+    />
+    <input type="text">
 
     <section class="grupo-visados">
         <h3>Visados presentados</h3>
