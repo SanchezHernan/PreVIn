@@ -1,1 +1,22 @@
-<p>visados-presentados works!</p>
+<div style="display: flex; flex-direction: column; width: 100%;">    
+    <h3 class="titulo"> {{ title }} </h3>
+
+    select
+
+    <section class="grupo-visados">
+        <h3>Visados pendientes de carga</h3>
+        @for (v of visadosEnEvaluacion; track v.numero) {
+            <app-visado-card [visado]="v"></app-visado-card>
+        }
+    </section>
+
+    select
+
+    <section class="grupo-visados">
+        <h3>Visados presentados</h3>
+        @for (v of visadosPresentados; track v.numero) {
+            <app-visado-card [visado]="v"></app-visado-card>
+        }
+    </section>
+
+</div>
