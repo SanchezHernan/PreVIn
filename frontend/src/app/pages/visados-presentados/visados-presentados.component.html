@@ -1,29 +1,45 @@
-<div style="display: flex; flex-direction: column; width: 100%; margin: 2rem;">    
+<div class="dcol" style="margin: 2rem;">    
     <h3 class="titulo"> {{ title }} </h3>
 
-    <div>
+    <div class="drow gap10">
         <app-mat-select
             placeholder = 'Partida'
             [elements] = p1
         />
-        <input type="text"> //meter mat input
+        <mat-form-field class="example-form-field">
+            <input matInput type="text">
+            @if (value) {
+                <div class="borderless" matSuffix matIconButton (click)="value=''">
+                    <mat-icon>search</mat-icon>
+                </div>
+            }
+        </mat-form-field>
     </div>
 
     <section class="grupo-visados">
-        <h3>Visados pendientes de carga</h3>
+        <h3 class="card-title w242">Visados pendientes de carga</h3>
         @for (v of visadosEnEvaluacion; track v.numero) {
             <app-visado-card [visado]="v"></app-visado-card>
         }
     </section>
 
-    <app-mat-select
-        placeholder = 'Partida'
-        [elements] = p2
-    />
-    <input type="text">
+    <div class="drow gap10">
+        <app-mat-select
+            placeholder = 'Partida'
+            [elements] = p2
+        />
+        <mat-form-field class="example-form-field">
+            <input matInput type="text">
+            @if (value) {
+                <div class="borderless" matSuffix matIconButton (click)="value=''">
+                    <mat-icon>search</mat-icon>
+                </div>
+            }
+        </mat-form-field>
+    </div>
 
     <section class="grupo-visados">
-        <h3>Visados presentados</h3>
+        <h3 class="card-title w177">Visados presentados</h3>
         @for (v of visadosPresentados; track v.numero) {
             <app-visado-card [visado]="v"></app-visado-card>
         }

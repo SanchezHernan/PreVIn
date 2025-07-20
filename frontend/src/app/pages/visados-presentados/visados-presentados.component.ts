@@ -4,7 +4,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { VisadoCardComponent } from '../../components/visado-card/visado-card.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSelectComponent } from '../../components/mat-select/mat-select.component';
-
+import {MatIcon, MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 interface Partida {
   id: number;
   value: string;
@@ -12,13 +16,19 @@ interface Partida {
 @Component({
   selector: 'app-visados-presentados',
   standalone: true,
-  imports: [VisadoCardComponent, MatDividerModule, CommonModule, MatSelectModule, MatSelectComponent],
+  imports: [
+    VisadoCardComponent, MatDividerModule, CommonModule, 
+    MatSelectModule, MatSelectComponent, MatIconModule,
+    MatIcon, MatButtonModule, FormsModule,
+    MatInputModule, MatFormFieldModule
+  ],
   templateUrl: './visados-presentados.component.html',
   styleUrl: './visados-presentados.component.scss'
 })
 export class VisadosPresentadosComponent {
 
   title = 'Visados Presentados'
+  value = 'Clear me';
 
   p1: Partida[] = [
     {id: 0, value: 'Profesional'},

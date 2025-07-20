@@ -1,0 +1,18 @@
+<div class="modal-correccion">
+  <div class="titulo">SOLICITUD DE CORRECCIÓN</div>
+
+  <div class="campo">
+    <b>{{ descripcionCampo }}</b><br />
+    <small *ngIf="archivo">{{ archivo }}</small>
+  </div>
+
+  <textarea
+    [(ngModel)]="motivo"
+    placeholder="Descripción..."
+  ></textarea>
+
+  <div class="acciones">
+    <button class="ok" (click)="onAceptar()">✔</button>
+    <button class="cancel" (click)="onCancelar()">✖</button>
+  </div>
+</div>

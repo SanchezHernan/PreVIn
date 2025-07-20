@@ -4,6 +4,7 @@ import { MisVisadosComponent } from './pages/misvisados/misvisados.component';
 import { PrevisadosComponent } from './pages/previsados/previsados.component';
 import { DocyplanosComponent } from './pages/docyplanos/docyplanos.component';
 import { VisadosPresentadosComponent } from './pages/visados-presentados/visados-presentados.component';
+import { EvaluacionCatastralComponent } from './pages/evaluacion-catastral/evaluacion-catastral.component';
 
 export const routes: Routes = [
     {
@@ -30,5 +31,10 @@ export const routes: Routes = [
         path: 'visados-presentados',
         component: VisadosPresentadosComponent,
         title: 'Visados Presentados'
+    },
+    {
+        path: 'evaluacion-catastral',
+        component: EvaluacionCatastralComponent,
+        title: 'Evaluación Catastral'
     }
 ];
