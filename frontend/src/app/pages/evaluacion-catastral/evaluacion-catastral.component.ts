@@ -4,6 +4,7 @@ import { MatIcon } from '@angular/material/icon';
 import { CircIconComponent } from '../../components/circ-icon/circ-icon.component';
 import { CorreccionModalComponent } from '../../components/modals/correccion-modal/correccion-modal.component';
 import { MatTableModule } from '@angular/material/table';
+import { CommonModule } from '@angular/common';
 
 export interface PeriodicElement {
   cantidad: number;
@@ -21,6 +22,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   imports: [
     MatCard, MatIcon, CircIconComponent, 
     MatCardTitle, CorreccionModalComponent, MatTableModule,
+    CommonModule
   ],
   templateUrl: './evaluacion-catastral.component.html',
   styleUrl: './evaluacion-catastral.component.scss'
@@ -33,35 +35,46 @@ export class EvaluacionCatastralComponent {
   dataSource = ELEMENT_DATA;
 
   info = {
-  "partida": 148253,
-  "tipoPosesion": "PROPIETARIO",
-  "dni": "43.567.789",
-  "titular": {
-    "apellidos": "Ramirez",
-    "nombres": "Juan Ángel"
-  },
-  "ubicacion": {
-    "cuartel": 3,
-    "distrito": 2,
-    "seccion": 1,
-    "manzana": 366,
-    "lote_parcela": 1
-  },
-  "cuentas": {
-    "osm": 2321,
-    "tgi": 2344
-  },
-  "antecedente": "1113452",
-  "domicilio": {
-    "calle": "Suipacha",
-    "numero": 564
-  },
-  "matricula": {
-    "numero": 23123,
-    "anio": 2023
-  },
-  "planoMensura": 5673
-}
+    "partida": 148253,
+    "tipoPosesion": "PROPIETARIO",
+    "dni": "43.567.789",
+    "titular": {
+      "apellidos": "Ramirez",
+      "nombres": "Juan Ángel"
+    },
+    "ubicacion": {
+      "cuartel": 3,
+      "distrito": 2,
+      "seccion": 1,
+      "manzana": 366,
+      "lote_parcela": 1
+    },
+    "cuentas": {
+      "osm": 2321,
+      "tgi": 2344
+    },
+    "antecedente": "1113452",
+    "domicilio": {
+      "calle": "Suipacha",
+      "numero": 564
+    },
+    "matricula": {
+      "numero": 23123,
+      "anio": 2023
+    },
+    "planoMensura": 5673
+  }
+
+  restricciones: any[] = [
+    {
+      'descripcion': 'RESTRICCIONES de GAS NEA',
+      'archivo': 'Res_134232_NEA.pdf'
+    },
+    {
+      'descripcion': 'RESTRICCIONES de ENERSA',
+      'archivo': 'Res_134232_ENERSA.pdf'
+    },
+  ]
 
   abrirCorrecciones(): void {
     console.log('abrir correciones');

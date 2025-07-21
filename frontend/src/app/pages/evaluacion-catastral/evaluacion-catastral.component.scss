@@ -9,7 +9,7 @@ $rojo-error: #f44336;
 // === Estructura general ===
 :host {
   display: block;
-  padding: 2rem;
+  padding: 2rem 6rem;
   background: white;
   font-family: Roboto, sans-serif;
 }
@@ -33,10 +33,6 @@ h2 {
   h3 {
     margin: 0;
     font-size: 1.8rem;
-  }
-
-  span {
-    display: block;
   }
 }
 
@@ -68,14 +64,27 @@ h2 {
       }
     }
   }
+
+  .leftContent {
+
+    .lc-row {
+      display: flex;
+      gap: 100px;
+      margin-bottom: 10px;
+    }
+  }
 }
 
 // === Panel de restricciones ===
 .panel-restricciones {
   margin-top: 1.5rem;
-  background-color: $amarillo2;
-  border: 1px solid $gris-border;
+  background-color: var(--color-amarillo);
   padding: 1rem;
+
+  .card-title {
+    margin-top: -20px;
+    background-color: var(--color-amarillo);
+  }
 
   table {
     width: 100%;
@@ -86,35 +95,76 @@ h2 {
       padding: 0.5rem 0.75rem;
       border-bottom: 1px solid #ccc;
       font-size: 0.95rem;
+      text-align: center;
+      border: none;
     }
 
     th {
       font-weight: 600;
-      background-color: #fff3c0;
+      // background-color: #fff3c0;
     }
 
     td:last-child {
       text-align: center;
     }
   }
+
 }
 
 // === Botones flotantes laterales ===
 .acciones-flotantes {
   position: fixed;
   top: 50%;
-  right: 2rem;
+  right: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2.5rem;
   transform: translateY(-50%);
   z-index: 1000;
 
+  .checkbtn {
+    background-color: $verde-ok;
+    color: white;
+    border: none;
+    margin-left: 5px;
+  }
+
+  .cancelbtn {
+    color: red;
+    border: none;
+    background-color: transparent;
+  }
+
+  .checkDesc {
+    font-size: 9px; 
+    width: 60px;
+    color: $verde-ok;
+    text-align: center;
+  }
+
+  .blockDesc {
+    font-size: 9px; 
+    width: 60px;
+    color: $rojo-error;
+    text-align: center;
+  }
+
   button {
-    width: 56px;
-    height: 56px;
-    mat-icon {
-      font-size: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    .checkIcon {
+      font-size: 35px;
+      width: 32px;
+      height: 32px;
+    }
+    .blockIcon{
+      font-size: 50px;
+      width: 50px;
+      height: 50px;
+      font-weight: bold;
     }
   }
 }

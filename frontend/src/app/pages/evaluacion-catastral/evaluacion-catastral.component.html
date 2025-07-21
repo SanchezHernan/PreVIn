@@ -23,39 +23,39 @@
   <!-- <div class="drow jc-between ai-start"> -->
     <div class="dcol">
       <h3>{{ professional }}</h3>
-      <div class="drow">
+      <div class="drow jc-between">
         <div class="leftContent">
-            <div><span>Partida: {{ info.partida }} </span></div>
-            <div>
+            <div class="lc-row"><span>Partida: {{ info.partida }} </span></div>
+            <div class="lc-row">
                 <span>Calle: {{ info.domicilio.calle }} </span>
                 <span>Numero: {{ info.domicilio.numero }} </span>
             </div>
-            <div>
+            <div class="lc-row">
                 <span>Matricula/Año: {{ info.matricula.numero }}/{{ info.matricula.anio }} </span>
                 <span>Plano de Mesura: {{ info.planoMensura }} </span>
             </div>
-            <div>
+            <div class="lc-row">
                 <span>Cuartel: {{ info.ubicacion.cuartel }} </span>
                 <span>Seccion: {{ info.ubicacion.seccion }} </span>
                 <span>Lote/Parcela: {{ info.ubicacion.lote_parcela }} </span>
             </div>
-            <div>
+            <div class="lc-row">
                 <span>Distrito: {{ info.ubicacion.distrito }} </span>
                 <span>Manzana; {{ info.ubicacion.manzana }} </span>
             </div>
-            <div>
+            <div class="lc-row">
                 <span>Cta. OSM: {{ info.cuentas.osm }} </span>
                 <span>Cta. TGI: {{ info.cuentas.tgi }} </span>
             </div>
-            <div>
+            <div class="lc-row">
                 <span>Tipo se Posesión: {{ info.tipoPosesion }} </span>
                 <span>DNI: {{ info.dni }} </span>
             </div>
-            <div>
+            <div class="lc-row">
                 <span>Apellidos: {{ info.titular.apellidos }} </span>
                 <span>Nombres: {{ info.titular.nombres }} </span>
             </div>
-            <div>
+            <div class="lc-row">
                 <span>Antecedente - Plano Expte N°: {{ info.antecedente }} </span>
             </div>
         </div>
@@ -84,47 +84,53 @@
     <!-- </div> -->
 
     <!-- Botón tipo ícono azul -->
-    <app-circ-icon
+    <!-- <app-circ-icon
       icon="info"
       color="white"
       borderColor="#1b6cb3"
       (click)="abrirCorreccionCampo('dni')"
-    ></app-circ-icon>
+    ></app-circ-icon> -->
   </div>
 </mat-card>
 
 <!-- Lista de restricciones -->
 <mat-card class="panel-restricciones">
-  <mat-card-title>RESTRICCIONES</mat-card-title>
-
-  <table class="tabla-simple">
-    <thead>
-      <tr><th>Descripción</th><th>Archivo</th><th></th></tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let r of restricciones">
-        <td>{{ r.descripcion }}</td>
-        <td>{{ r.archivo }}</td>
-        <td>
-          <app-circ-icon
-            icon="info"
-            (click)="abrirCorreccionCampo(r)"
-          ></app-circ-icon>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div style="border: solid 1px; padding: 5px;">
+    <mat-card-title class="card-title w150">RESTRICCIONES</mat-card-title>
+    <table class="tabla-simple">
+      <thead>
+        <tr><th>Descripción</th><th>Archivo</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of restricciones">
+          <td>{{ r.descripcion }}</td>
+          <td>{{ r.archivo }}</td>
+          <td>
+            <app-circ-icon
+              icon="info"
+              (click)="abrirCorreccionCampo(r)"
+            ></app-circ-icon>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </mat-card>
 
 <!-- Botones laterales -->
 <div class="acciones-flotantes">
-  <button mat-fab color="primary" (click)="aprobar()">
-    <mat-icon>check</mat-icon>
-  </button>
-
-  <button mat-fab color="warn" (click)="abrirCorrecciones()">
-    <mat-icon>close</mat-icon>
-  </button>
+  <div class="dcol" style="align-items: center;">
+    <button mat-fab (click)="aprobar()" class="checkbtn">
+      <mat-icon class="checkIcon">check</mat-icon>   
+    </button>
+    <span class="checkDesc">Aprobar datos catastrales</span>
+  </div>
+  <div class="dcol">
+    <button mat-fab color="warn" (click)="abrirCorrecciones()" class="cancelbtn">
+      <mat-icon class="blockIcon">block</mat-icon>
+    </button>
+    <span class="blockDesc">Enviar Correcciones</span>
+  </div>
 </div>
 
 <!-- Modal de corrección (mat-dialog o mat-menu) -->
